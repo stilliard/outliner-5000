@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Example</title>
+    <style>
+    body { font: 16px/1.6 sans-serif; }
+    #css-path-container { display: none; }
+    </style>
+</head>
+<body>
+
+    <header id="header-area">
+        <h1>Example <em>selecting</em> css path.</h1>
+    </header>
+
+    <p><button id="inspect-btn">Inspect</button></p>
+
+    <p id="css-path-container">
+        CSS: <input type="text" id="css-path">
+    </p>
+
+    <!-- bring in the outliner-5000 -->
+    <script src="../outliner-5000.js"></script>
+
+    <!-- also this example uses css_path.js from: https://gist.github.com/asfaltboy/8aea7435b888164e8563 -->
+    <script src="./css_path.js"></script>
+
+    <!-- example code -->
+    <script>
+
+    let inspectBtn = document.querySelector('#inspect-btn'),
+        cssPathInput = document.querySelector('#css-path'),
+        cssPathContainer = document.querySelector('#css-path-container');
+
+    function toggleInspection() {
+        cssPathContainer.style.display = 'none';
+        outliner = Outliner5000({ removeOnCallback: true }, target => {
+            cssPathContainer.style.display = 'block';
+            cssPathInput.value = UTILS.cssPath(target).replace('.outliner5000', '');
+        });
+    }
+
+    inspectBtn.addEventListener('click', toggleInspection);
+
+    </script>
+    
+</body>
+</html>

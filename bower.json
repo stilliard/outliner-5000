@@ -1,0 +1,20 @@
+{
+  "name": "outliner-5000",
+  "description": "Create an inspector like highlight select on hover of elements to select a specific element and handle with a callback.",
+  "main": "outliner-5000.js",
+  "authors": [
+    "Andrew Stilliard <andrew.stilliard@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "outline",
+    "browser",
+    "inspector"
+  ],
+  "homepage": "https://github.com/stilliard/outliner-5000",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ]
+}
